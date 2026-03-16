@@ -23,42 +23,29 @@ note- React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
       Hello                                                               margin: EdgeInsets.all(16),
 </div>                                                                    child: Text("Hello"),
                                                                        )
-React: CSS margin
-
-Flutter: Container.margin
 
 4. Width and Height
-React
-<div style={{ width: 200, height: 100 }}>Hello</div>
-Flutter
-Container(
-  width: 200,
-  height: 100,
-  child: Text("Hello"),
-)
 
-Same concept.
+<div style={{ width: 200, height: 100 }}>                             Container(
+    Hello                                                                width: 200,
+</div>                                                                   height: 100,
+                                                                         child: Text("Hello"),
+                                                                      )
 
 5. Background color / border / radius
-React
-<div
-  style={{
-    backgroundColor: "blue",
-    border: "1px solid black",
-    borderRadius: 10,
-  }}
->
-  Hello
-</div>
-Flutter
-Container(
-  decoration: BoxDecoration(
-    color: Colors.blue,
-    border: Border.all(color: Colors.black),
-    borderRadius: BorderRadius.circular(10),
-  ),
-  child: Text("Hello"),
-)
+                                                                                                       Container(                                       Note- color, backgroundcolor, borderradius ke liye hume container.decoration.BoxDecoration ka use karte hai
+<div style={{ backgroundColor: "blue", border: "1px solid black", borderRadius: 10,}}>                    decoration: BoxDecoration(
+   Hello                                                                                                      color: Colors.blue,
+</div>                                                                                                        border: Border.all(color: Colors.black),
+                                                                                                              borderRadius: BorderRadius.circular(10),
+                                                                                                          ),
+                                                                                                          child: Text("Hello"),
+                                                                                                       )
+    
+    
+
+  
+
 Compare
 
 React me CSS, Flutter me BoxDecoration.
