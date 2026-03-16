@@ -1,53 +1,28 @@
-Matlab React me tum likhte ho:
+Matlab React me tum likhte ho:                                        Flutter me:
 
-<div className="box">Hello</div>
+(i) <div className="box">Hello</div>                                      Container(
+                                                                          child: Text("Hello"),
+                                                                      )
+ 
+1. Basic container                                                    1. Basic container                                               
+React                                                                  in Flutter
+<div>Hello</div>                                                       Container(
+                                                                          child: Text("Hello"),
+                                                                       )
+  
+note- React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
 
-Flutter me:
-
-Container(
-  child: Text("Hello"),
-)
-1. Basic container
-React
-<div>Hello</div>
-Flutter
-Container(
-  child: Text("Hello"),
-)
-
-React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
-
-2. Padding
-React
-<div style={{ padding: 16 }}>Hello</div>
-Flutter
-Padding(
-  padding: EdgeInsets.all(16),
-  child: Text("Hello"),
-)
-
-Ya:
-
-Container(
-  padding: EdgeInsets.all(16),
-  child: Text("Hello"),
-)
-Compare
-
-React: padding
-
-Flutter: Padding widget ya Container.padding
+2. Padding                                      
+<div style={{ padding: 16 }}>                                          Padding(                                   yaa     Container(                           Note- container.padding use karte hai
+    Hello                                                                 padding: EdgeInsets.all(16),                       padding: EdgeInsets.all(16),
+</div>                                                                    child: Text("Hello"),                              child: Text("Hello"),
+                                                                       )                                                   )
 
 3. Margin
-React
-<div style={{ margin: 16 }}>Hello</div>
-Flutter
-Container(
-  margin: EdgeInsets.all(16),
-  child: Text("Hello"),
-)
-Compare
-
+<div style={{ margin: 16 }}>                                          Container(
+      Hello                                                               margin: EdgeInsets.all(16),
+</div>                                                                    child: Text("Hello"),
+                                                                       )
 React: CSS margin
 
 Flutter: Container.margin
