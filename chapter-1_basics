@@ -1,0 +1,23 @@
+chapter-1 jaise react me hum ui ko return karane ke liye aise likhte hai
+step-1 ye react me hum aise likhte hai                                                   step-1 thik isi tarah hum flutter me bhi likhte hai
+class App extends React.Component {                                                      class App extends StatelessWidget {
+  render() {                                                                                  @override
+    return <h1>Hello</h1>;                                                                    Widget build(BuildContext context) {
+  }                                                                                                 return Text("Hello");
+}                                                                                             }
+                                                                                          }
+                                                                                         Note- iska matlab ye hai ki ki build ek method hai jiska return type ek widget hai
+
+chapter-2
+                                                                                           
+class App extends React.Component {                                                      class App extends StatelessWidget {
+  render() {                                                                                @override
+    return (                                                                                    Widget build(BuildContext context) {
+      <div>                                                                                          return Column(
+        <h1>Hello</h1>                                                                                  children: [
+        <p>Welcome</p>                                                                                     Text("Hello"),
+      </div>                                                                                               Text("Welcome"),
+    );                                                                                                    ],
+  }                                                                                                   );
+}                                                                                                 }
+                                                                                           }
