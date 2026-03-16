@@ -42,70 +42,44 @@ note- React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
                                                                                                           child: Text("Hello"),
                                                                                                        )
     
-    
-
-  
-
-Compare
-
-React me CSS, Flutter me BoxDecoration.
 
 6. Flex row
-React
-<div style={{ display: "flex", flexDirection: "row" }}>
-  <div>A</div>
-  <div>B</div>
-</div>
-Flutter
-Row(
-  children: [
-    Text("A"),
-    Text("B"),
-  ],
-)
-Compare
 
-React flex row → Flutter Row
-
-7. Flex column
-React
-<div style={{ display: "flex", flexDirection: "column" }}>
-  <div>A</div>
-  <div>B</div>
-</div>
-Flutter
-Column(
-  children: [
-    Text("A"),
-    Text("B"),
-  ],
-)
-Compare
-
-React flex column → Flutter Column
+<div style={{ display: "flex", flexDirection: "row" }}>                                                 Row(                                 2nd way-    Container(
+  <div>A</div>                                                                                              children: [                                      padding: EdgeInsets.all(10),
+  <div>B</div>                                                                                                Text("A"),                                     color: Colors.grey,
+</div>                                                                                                        Text("B"),                                     child: Row(
+                                                                                                            ],                                                   children: [
+                                                                                                        )                                                            Text("A"),
+                                                                                                                                                                     Text("B"),
+                                                                                                                                                                  ] 
+                                                                                                                                                              )
+                                                                                                                                                            ) 
+  7. Flex column              
+<div style={{ display: "flex", flexDirection: "column" }}>                                                 Column(                               2nd way-  Container(
+  <div>A</div>                                                                                              children: [                                      padding: EdgeInsets.all(10),
+  <div>B</div>                                                                                                Text("A"),                                     color: Colors.grey,
+</div>                                                                                                        Text("B"),                                     child: Column(
+                                                                                                            ],                                                   children: [
+                                                                                                        )                                                            Text("A"),
+                                                                                                                                                                     Text("B"),
+                                                                                                                                                                  ] 
+                                                                                                                                                              )
+                                                                                                                                                            ) 
 
 8. justify-content and align-items
 
-React me ye bahut important hota hai.
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center",}}>                                             Row(
+   <div>Hello</div>                                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+</div>                                                                                                                           crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                                 children: [
+                                                                                                                                     Text("Hello"),
+                                                                                                                                  ],
+                                                                                                                              )
+  
+    
 
-React
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  }}
->
-  <div>Hello</div>
-</div>
-Flutter
-Row(
-  mainAxisAlignment: MainAxisAlignment.center,
-  crossAxisAlignment: CrossAxisAlignment.center,
-  children: [
-    Text("Hello"),
-  ],
-)
+
 Mapping
 
 justify-content → mainAxisAlignment
