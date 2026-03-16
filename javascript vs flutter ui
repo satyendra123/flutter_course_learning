@@ -69,187 +69,93 @@ note- React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
 
 8. justify-content and align-items
 
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center",}}>                                             Row(                                                                               Container(
-   <div>Hello</div>                                                                                                              mainAxisAlignment: MainAxisAlignment.center,                                        height: 100,
-</div>                                                                                                                           crossAxisAlignment: CrossAxisAlignment.center,                                      child: Row(
-                                                                                                                                 children: [                                                                            mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                                     Text("Hello"),                                                                     crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                                  ],                                                                                    children: [
-                                                                                                                              )                                                                                            Text("Hello"),
-                                                                                                                                                                                                                        ],
-                                                                                                                                                                                                                      )
-                                                                                                                                                                                                                   )   
-9. flex: 1 / grow
-React
-<div style={{ display: "flex" }}>
-  <div style={{ flex: 1, background: "red" }}>A</div>
-  <div style={{ flex: 2, background: "blue" }}>B</div>
-</div>
-Flutter
-Row(
-  children: [
-    Expanded(
-      flex: 1,
-      child: Container(color: Colors.red, child: Text("A")),
-    ),
-    Expanded(
-      flex: 2,
-      child: Container(color: Colors.blue, child: Text("B")),
-    ),
-  ],
-)
-Compare
-
-React flex: 1
-
-Flutter Expanded(flex: 1)
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center",}}>                            Row(                                                                               Container(
+   <div>Hello</div>                                                                                             mainAxisAlignment: MainAxisAlignment.center,                                        height: 100,
+</div>                                                                                                          crossAxisAlignment: CrossAxisAlignment.center,                                      child: Row(
+                                                                                                                children: [                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                    Text("Hello"),                                                                     crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                ],                                                                                    children: [
+                                                                                                              )                                                                                            Text("Hello"),
+                                                                                                                                                                                                       ],
+                                                                                                                                                                                                      )
+                                                                                                                                                                                                  )   
+9. flex-grow
+<div style={{ display: "flex" }}>                                                                            Row(
+  <div style={{ flex: 1, background: "red" }}>A</div>                                                          children: [
+  <div style={{ flex: 2, background: "blue" }}>B</div>                                                            Expanded(
+</div>                                                                                                                flex: 1,
+                                                                                                                      child: Container(color: Colors.red, child: Text("A")),
+                                                                                                                  ),
+                                                                                                                  Expanded(
+                                                                                                                       flex: 2,
+                                                                                                                        child: Container(color: Colors.blue, child: Text("B")),
+                                                                                                                  )
+                                                                                                                ]
+                                                                                                              )
 
 10. Centering
-React
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-  }}
->
-  <h1>Hello</h1>
-</div>
-Flutter
-Center(
-  child: Text("Hello"),
-)
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}}>             Center(                          2nd way    Scaffold(
+  <h1>Hello</h1>                                                                                                 child: Text("Hello"),                        body: Center(
+</div>                                                                                                         )                                              child: Text("Hello"),
+                                                                                                                                                              ),
+ Note- Center ka kaam = child ko center me rakhna
+       Container ka kaam = size, padding, margin, color, decoration dena                                                                                                                                                          )
+  
 
-Ya full layout me:
 
-Scaffold(
-  body: Center(
-    child: Text("Hello"),
-  ),
-)
+11. Grid                                                                                               GridView.count(
+<div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10,}}>                           crossAxisCount: 2,
+  <div>A</div>                                                                                              crossAxisSpacing: 10,
+  <div>B</div>                                                                                              mainAxisSpacing: 10,
+  <div>C</div>                                                                                              children: [
+  <div>D</div>                                                                                                  Text("A"),
+</div>                                                                                                          Text("B"),
+                                                                                                                Text("C"),
+                                                                                                                Text("D"),
+                                                                                                             ],
+                                                                                                        )
 
-Flutter me Center bahut common hai.
 
-11. Grid
-React
-<div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: 10,
-  }}
->
-  <div>A</div>
-  <div>B</div>
-  <div>C</div>
-  <div>D</div>
-</div>
-Flutter
-GridView.count(
-  crossAxisCount: 2,
-  crossAxisSpacing: 10,
-  mainAxisSpacing: 10,
-  children: [
-    Text("A"),
-    Text("B"),
-    Text("C"),
-    Text("D"),
-  ],
-)
-Compare
-
-React CSS Grid → Flutter GridView
-
-gridTemplateColumns: repeat(2, 1fr) → crossAxisCount: 2
-
-gap → crossAxisSpacing + mainAxisSpacing
-
-Important
-
-Flutter me CSS grid jaisa exact same generic system nahi hota. Mostly:
-
-GridView
-
-Wrap
-
-Row + Column
-
-Table
-
-use karte hain.
-
-12. Gap between children
-React
-<div style={{ display: "flex", gap: 10 }}>
-  <div>A</div>
-  <div>B</div>
-</div>
-Flutter
-
-Flutter me direct old-style gap nahi tha, usually SizedBox use hota tha:
-
-Row(
-  children: [
-    Text("A"),
-    SizedBox(width: 10),
-    Text("B"),
-  ],
-)
-
-Vertical gap:
-
-Column(
-  children: [
-    Text("A"),
-    SizedBox(height: 10),
-    Text("B"),
-  ],
-)
+12. Gap between children                                                             Row(                                             Column(   
+<div style={{ display: "flex", gap: 10 }}>                                              children: [                                      children: [
+  <div>A</div>                                                                              Text("A"),                                       Text("A"),
+  <div>B</div>                                                                              SizedBox(width: 10),                             SizedBox(height: 10),
+</div>                                                                                      Text("B"),                                       Text("B"),
+                                                                                        ],                                                 ],
+                                                                                      )                                                )
 13. Position absolute
-React
-<div style={{ position: "relative" }}>
-  <div style={{ position: "absolute", top: 10, left: 20 }}>
-    Hello
-  </div>
-</div>
-Flutter
-Stack(
-  children: [
-    Positioned(
-      top: 10,
-      left: 20,
-      child: Text("Hello"),
-    ),
-  ],
-)
-Compare
-
-React position: absolute → Flutter Stack + Positioned
+<div style={{ position: "relative" }}>                                                          Stack(
+  <div style={{ position: "absolute", top: 10, left: 20 }}>                                        children: [
+    Hello                                                                                             Positioned(
+  </div>                                                                                                    top: 10,
+</div>                                                                                                      left: 20,
+                                                                                                            child: Text("Hello"),
+                                                                                                       ),
+                                                                                                    ],
+                                                                                                 )
+                                                                                          
 
 14. Scrollable list
-React
-<div style={{ overflowY: "scroll", height: 300 }}>
-  {items.map((item) => (
-    <div key={item.id}>{item.name}</div>
-  ))}
-</div>
-Flutter
-ListView.builder(
-  itemCount: items.length,
-  itemBuilder: (context, index) {
-    return Text(items[index].name);
-  },
-)
+<div style={{ overflowY: "scroll", height: 300 }}>                                               ListView.builder(
+  {items.map((item) => (                                                                               itemCount: items.length,
+    <div key={item.id}>{item.name}</div>                                                               itemBuilder: (context, index) {
+  ))}                                                                                                     return Text(items[index].name);
+</div>                                                                                                 },
+                                                                                           )
+
+  
+  
+   
+ 
+
 Compare
 
 React map list → Flutter ListView.builder
 
 15. Conditional UI
-React
-{isLoading ? <p>Loading...</p> : <p>Done</p>}
-Flutter
-isLoading ? Text("Loading...") : Text("Done")
+{isLoading ? <p>Loading...</p> : <p>Done</p>}                                           isLoading ? Text("Loading...") : Text("Done")
+
+
 
 Same idea.
 
