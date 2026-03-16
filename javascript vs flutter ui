@@ -160,40 +160,29 @@ React map list → Flutter ListView.builder
 Same idea.
 
 16. Reusable component
-React
-function MyButton() {
-  return <button>Click</button>;
-}
-Flutter
-class MyButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text("Click"),
-    );
-  }
-}
-Compare
-
-React component → Flutter widget
+function MyButton() {                                                                    class MyButton extends StatelessWidget {
+  return <button>Click</button>;                                                               @override
+}                                                                                              Widget build(BuildContext context) {
+                                                                                                  return ElevatedButton(
+                                                                                                             onPressed: () {},
+                                                                                                             child: Text("Click"),
+                                                                                                     );
+                                                                                                }
+                                                                                           }                                                                                   
+      
+    
 
 17. Event handling
-React
-<button onClick={() => console.log("clicked")}>Click</button>
-Flutter
-ElevatedButton(
-  onPressed: () {
-    print("clicked");
-  },
-  child: Text("Click"),
-)
-Compare
 
-onClick → onPressed
+<button onClick={() => console.log("clicked")}>Click</button>                             ElevatedButton(
+                                                                                              onPressed: () {
+                                                                                                print("clicked");
+                                                                                              },
+                                                                                              child: Text("Click"),
+                                                                                          )
+  
 
 18. Full page layout compare
-React
 function App() {
   return (
     <div style={{ padding: 20 }}>
@@ -838,151 +827,15 @@ Container(
   ),
   child: Text("Card"),
 )
+
 25. Scrolling page
+<div style={{ overflowY: "scroll", height: 400 }}>                           SingleChildScrollView(
+   <p>Content</p>                                                                 child: Column(
+</div>                                                                            children: [
+                                                                                     Text("Content"),
+                                                                                    ],
+                                                                                  ),
+                                                                             )
 
-React
 
-<div style={{ overflowY: "scroll", height: 400 }}>
-  Content
-</div>
 
-Flutter
-
-SingleChildScrollView(
-  child: Column(
-    children: [
-      Text("Content"),
-    ],
-  ),
-)
-
-or for list:
-
-ListView(...)
-Fast mapping list
-
-Ye sab rat lo, kaafi help karega:
-
-React.Component → StatelessWidget / StatefulWidget
-
-render() → build()
-
-div → Container
-
-h1/p/span → Text
-
-padding → Padding / Container.padding
-
-margin → Container.margin
-
-display:flex; flex-direction:row → Row
-
-display:flex; flex-direction:column → Column
-
-justify-content → mainAxisAlignment
-
-align-items → crossAxisAlignment
-
-flex:1 → Expanded
-
-gap → SizedBox
-
-grid → GridView
-
-position:absolute → Stack + Positioned
-
-map() list → ListView.builder
-
-onClick → onPressed
-
-Best way for you to learn
-
-Haan, compare karke seekhna tumhare liye best ho sakta hai, but is order me:
-
-Step 1
-
-Pehle ye compare karo:
-
-component vs widget
-
-render vs build
-
-div vs Container
-
-flex row/column vs Row/Column
-
-Step 2
-
-Fir layout:
-
-padding
-
-margin
-
-width/height
-
-center
-
-expanded
-
-stack
-
-Step 3
-
-Fir real UI:
-
-list
-
-grid
-
-form
-
-button
-
-card
-
-navigation
-
-Step 4
-
-Uske baad Flutter ka original mindset pakdo:
-
-everything is widget
-
-widget tree
-
-parent-child layout
-
-stateful/stateless
-
-build rebuild hota hai
-
-Sabse bada difference jo yaad rakhna hai
-
-React me:
-style lagate ho
-
-Flutter me:
-widget wrap karte ho
-
-Example:
-
-React
-
-<div style={{ padding: 20, textAlign: "center" }}>Hello</div>
-
-Flutter
-
-Padding(
-  padding: EdgeInsets.all(20),
-  child: Center(
-    child: Text("Hello"),
-  ),
-)
-One-line advice
-
-React comparison se start karo, but 10-15 din ke baad Flutter ko Flutter ki tarah sochna start karo.
-Tab learning fast bhi hogi aur confusion bhi kam hoga.
-
-Next mai tumhare liye React to Flutter mini project comparison bana sakta hoon, jaise:
-navbar, card list, login form, dashboard layout — side by side.
