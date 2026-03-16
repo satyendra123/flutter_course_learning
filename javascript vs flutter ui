@@ -78,26 +78,7 @@ note- React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
                                                                                                                               )                                                                                            Text("Hello"),
                                                                                                                                                                                                                         ],
                                                                                                                                                                                                                       )
-                                                                                                                                                                                                                   )     
-    
-
-
-Mapping
-
-justify-content → mainAxisAlignment
-
-align-items → crossAxisAlignment
-
-Important
-
-Flutter me:
-
-Row ka main axis = horizontal
-
-Column ka main axis = vertical
-
-Isliye same property ka behavior Row/Column me axis ke hisab se change hota hai.
-
+                                                                                                                                                                                                                   )   
 9. flex: 1 / grow
 React
 <div style={{ display: "flex" }}>
