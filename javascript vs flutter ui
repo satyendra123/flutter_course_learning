@@ -69,14 +69,16 @@ note- React me div, Flutter me Container ya kabhi SizedBox, Padding, Center etc.
 
 8. justify-content and align-items
 
-<div style={{ display: "flex", justifyContent: "center", alignItems: "center",}}>                                             Row(
-   <div>Hello</div>                                                                                                              mainAxisAlignment: MainAxisAlignment.center,
-</div>                                                                                                                           crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                                                                 children: [
-                                                                                                                                     Text("Hello"),
-                                                                                                                                  ],
-                                                                                                                              )
-  
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center",}}>                                             Row(                                                                               Container(
+   <div>Hello</div>                                                                                                              mainAxisAlignment: MainAxisAlignment.center,                                        height: 100,
+</div>                                                                                                                           crossAxisAlignment: CrossAxisAlignment.center,                                      child: Row(
+                                                                                                                                 children: [                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                                     Text("Hello"),                                                                     crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                                                                  ],                                                                                    children: [
+                                                                                                                              )                                                                                            Text("Hello"),
+                                                                                                                                                                                                                        ],
+                                                                                                                                                                                                                      )
+                                                                                                                                                                                                                   )     
     
 
 
