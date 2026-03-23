@@ -1,0 +1,264 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Scaffold Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int selectedBottomIndex = 0;
+
+  final List<Map<String, dynamic>> gridItems = [
+    {"title": "Card 1", "icon": Icons.home},
+    {"title": "Card 2", "icon": Icons.person},
+    {"title": "Card 3", "icon": Icons.settings},
+    {"title": "Card 4", "icon": Icons.favorite},
+    {"title": "Card 5", "icon": Icons.camera_alt},
+    {"title": "Card 6", "icon": Icons.message},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      radius: 28,
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.person, size: 30, color: Colors.blue),
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      "Satyendra",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    Text(
+                      "flutterdemo@gmail.com",
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text("Home"),
+                onTap: () => Navigator.pop(context),
+              ),
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text("Profile"),
+                onTap: () => Navigator.pop(context),
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text("Settings"),
+                onTap: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+        ),
+
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: const Text("Scaffold Demo"),
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(Icons.menu),
+              );
+            },
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                print("Search button pressed");
+              },
+              icon: const Icon(Icons.search),
+            ),
+            IconButton(
+              onPressed: () {
+                print("Settings button pressed");
+              },
+              icon: const Icon(Icons.settings),
+            ),
+          ],
+        ),
+
+        body: Column(
+          children: [
+            Container(
+              color: Colors.white,
+              child: const TabBar(
+                labelColor: Colors.blue,
+                unselectedLabelColor: Colors.grey,
+                indicatorColor: Colors.blue,
+                tabs: [
+                  Tab(icon: Icon(Icons.home), text: "Home"),
+                  Tab(icon: Icon(Icons.grid_view), text: "Grid"),
+                  Tab(icon: Icon(Icons.favorite), text: "Likes"),
+                  Tab(icon: Icon(Icons.person), text: "Profile"),
+                ],
+              ),
+            ),
+
+            Expanded(
+              child: TabBarView(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Home Tab Content",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: GridView.builder(
+                      itemCount: gridItems.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 12,
+                        childAspectRatio: 1,
+                      ),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.blue.shade100),
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 4,
+                                color: Colors.black12,
+                                offset: Offset(2, 2),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                gridItems[index]["icon"],
+                                size: 40,
+                                color: Colors.blue,
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                gridItems[index]["title"],
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              const Text(
+                                "Simple card inside grid",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 13),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+
+                  const Center(
+                    child: Text(
+                      "Likes Tab Content",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                  const Center(
+                    child: Text(
+                      "Profile Tab Content",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print("Floating Action Button Pressed");
+          },
+          backgroundColor: Colors.blue,
+          child: const Icon(Icons.add),
+        ),
+
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedBottomIndex,
+          onTap: (index) {
+            setState(() {
+              selectedBottomIndex = index;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Search",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "Profile",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
