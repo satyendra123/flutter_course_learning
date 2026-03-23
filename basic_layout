@@ -73,8 +73,9 @@ routes
 builder
 
 2nd scafforld- ye jo hota hai wo ek skelton hota hai jiske andar ye sari chize aati hai jaise. jaise sabse pahle Appbar aata hai, phir body aata hai, bottomnavigation aata hai, drawer aata hai aur FAB(floating action button) aata hai
-Top → AppBar
-Middle → Body
-Left → Drawer
-Bottom → BottomNavigationBar
-Floating button → FAB
+Top → AppBar (app bar me generally leading, title, actions[] jo ki list hota hai ye sab aate hai)
+Middle → Body (jitne bhi widgets hai jaise Tab, Row, Column, list (horizontal, verticle), Expanded, Center, Grid, container,Padding,  isme hota hai, )
+Left → Drawer (drawer me pura sidebar drawer open hokar aata hai)
+Bottom → BottomNavigationBar (isme niche jitna bhi niche navigation hota hai usko bottom navigation me rakhte hai)
+Floating button → FAB (floating action button) ye floating hota hai means drag and drop jaisa
+
