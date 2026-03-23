@@ -76,6 +76,6 @@ builder
 Top → AppBar (app bar me generally leading, title, actions[] jo ki list hota hai ye sab aate hai)
 Middle → Body (jitne bhi widgets hai jaise Tab, Row, Column, list (horizontal, verticle), Expanded, Center, Grid, container,Padding,  isme hota hai, )
 Left → Drawer (drawer me pura sidebar drawer open hokar aata hai)
-Bottom → BottomNavigationBar (isme niche jitna bhi niche navigation hota hai usko bottom navigation me rakhte hai)
+Bottom → BottomNavigationBar (isme niche jitna bhi niche navigation hota hai usko bottom navigation me rakhte hai). iska simple sa use hai Multiple screens switch karna
 Floating button → FAB (floating action button) ye floating hota hai means drag and drop jaisa
 
