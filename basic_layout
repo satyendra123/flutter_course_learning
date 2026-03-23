@@ -60,3 +60,23 @@ class MyFirstPage extends StatelessWidget {
     );
   }
 }
+
+Note- jo materialApp hota hai yeh app ka sabse upper wrapper hota hai. jitne bhi global wali chize hai jo pure apps ke liye apply hongi wo iske andar hi likhi jati hai, jaise app ka backgroundcolor, foregroundcolor, lighttheme, darktheme, themedata, debugger, aur ek home hota hai , home ke andar ham likhte hai ki app ke open hone par sabse pahla screen kya dikhega
+debugShowCheckedModeBanner
+title
+color
+navigatorKey
+scaffoldMessengerKey
+theme
+darkTheme
+themeMode
+home
+routes
+onUnknownRoute
+builder
+showPerformanceOverlay
+showSemanticsDebugger
+checkerboardRasterCacheImages
+checkerboardOffscreenLayers
+themeAnimationDuration
+themeAnimationCurve
