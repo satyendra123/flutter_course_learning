@@ -65,18 +65,16 @@ Note- jo materialApp hota hai yeh app ka sabse upper wrapper hota hai. jitne bhi
 debugShowCheckedModeBanner
 title
 color
-navigatorKey
-scaffoldMessengerKey
 theme
 darkTheme
 themeMode
 home
 routes
-onUnknownRoute
 builder
-showPerformanceOverlay
-showSemanticsDebugger
-checkerboardRasterCacheImages
-checkerboardOffscreenLayers
-themeAnimationDuration
-themeAnimationCurve
+
+2nd scafforld- ye jo hota hai wo ek skelton hota hai jiske andar ye sari chize aati hai jaise. jaise sabse pahle Appbar aata hai, phir body aata hai, bottomnavigation aata hai, drawer aata hai aur FAB(floating action button) aata hai
+Top → AppBar
+Middle → Body
+Left → Drawer
+Bottom → BottomNavigationBar
+Floating button → FAB
