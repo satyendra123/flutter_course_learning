@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyFirstPage(),
+    );
+  }
+}
+
+class MyFirstPage extends StatelessWidget {
+  const MyFirstPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("My First Page"),
+        leading: IconButton(
+          onPressed: () {
+            print("Menu button pressed");
+          },
+          icon: const Icon(Icons.menu),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print("Search button pressed");
+            },
+            icon: const Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {
+              print("Settings button pressed");
+            },
+            icon: const Icon(Icons.settings),
+          ),
+        ],
+
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Text(
+          "Hello World",
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
