@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+import 'package:horizontalcontainer/pages/home.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'horizontal container',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: MyHomeScreen(),
+    );
+  }
+}
+
+2) pages/home.dart
+import 'package:flutter/material.dart';
+class MyHomeScreen extends StatelessWidget {
+  const MyHomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Box decoration'),
+        centerTitle: true,
+      ),
+      body: 
+      Column(
+        children: [
+          Container(
+        width:double.infinity,
+        height:100,
+        color: Colors.blue,
+        child: Text('Hello world',style: TextStyle(fontSize: 20, color: Colors.white),),
+      ),
+      SizedBox(height: 20,),
+      Container(
+        width:double.infinity,
+        height:100,
+        color: Colors.green,
+        child: Text('Hello world',style: TextStyle(fontSize: 20, color: Colors.white),),
+      ),
+      SizedBox(height: 20,),
+
+      Container(
+        width:double.infinity,
+        height:100,
+        color: Colors.yellow,
+        child: Text('Hello world',style: TextStyle(fontSize: 20, color: Colors.white),),
+      ),
+      SizedBox(height: 20,),
+
+      Container(
+        width:double.infinity,
+        height:100,
+        color: Colors.red,
+        child: Text('Hello world',style: TextStyle(fontSize: 20, color: Colors.white),),
+      ),
+    ],
+      ),
+    );
+  }
+}
