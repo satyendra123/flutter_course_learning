@@ -1,0 +1,59 @@
+tab- tabs banane ke liye simply hume 3 chiz chahiye hoti hai
+        TabBar                -     tab ui screen ke liye hota hai
+        TabBarView            -     us tab me kya view dikhna chahiye hota hai
+        DefaultTabController  -     ye dono chiz ko control karta hai ki kis tab me kaon sa view dikhna chahiye
+
+
+
+Note- simply tab banane ke liye hum DefaultTabController iske andar length dete hai ki kitne tabs hai apne pass. aur iske child me hum scaffold banate hai
+scaffold ke andar hum appbar, title aur bottom property ka use karte hai hum bottom ke andar tabBar banayenge tabs aur ye jo tabs hai wo ek list leta hai apne andar jiske andar hum Tabs ka use karke tab ka ui likhte hai ki kaisa dikhega
+aur scaffold ke body me hum tabbarview ko call karenge jo ki children leta hai ye bhi ek list hai aur isme hum view likhte hai. jo hum pahla widget likhenge wo pahle screen ke liye hoga aur jo hum dusra widget likhenge wo dusre screen ke liye hoga aur jo hum teesra widget likhenge wo 3rd screen ke liye hoga
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyTabBarScreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyTabBarScreen extends StatelessWidget {
+  const MyTabBarScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3, // number of tabs
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Simple TabBar Example'),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: "Home"),
+              Tab(text: "Profile"),
+              Tab(text: "Settings"),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            Center(child: Text("Home Screen")),
+            Center(child: Text("Profile Screen")),
+            Center(child: Text("Settings Screen")),
+          ],
+        ),
+      ),
+    );
+  }
+}
